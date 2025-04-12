@@ -131,6 +131,14 @@
         }
     </style>
     <script>
+
+        function comingSoon() {
+            document.getElementById("popup").style.display = "flex";
+        }
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+
         const quotes = [
             "Time flies like an arrow. Fruit flies like a banana!",
             "404: Motivation not found. Try coffee?",
@@ -157,25 +165,49 @@
             });
         }
 
-        function showVideoInfo() {
-            document.getElementById("popup-title").innerText = "🎬 Видео-запись эфира";
-            document.getElementById("popup-text").innerHTML = "Запись эфира есть!<br>Чтобы получить её, напишите на <b>support@neiruha.com</b> 🎥";
-            document.getElementById("popup").style.display = "flex";
 
-            confetti({
-                particleCount: 120,
-                spread: 60,
-                origin: { y: 0.7 }
-            });
-        }
+let clickCount = 0;
 
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-        }
-    </script>
+function handleVideoRequest() {
+    clickCount++;
+    if (clickCount >= 11) {
+        document.getElementById("popup-title").innerText = "📜 Упорство побеждает";
+        document.getElementById("popup-text").innerHTML = `Ну что ж, странник...<br>Раз ты так настойчив, вот тебе тайная ссылка:<br><a href="https://youtu.be/quR0UALX-ec" target="_blank">https://youtu.be/quR0UALX-ec 🚀</a>`;
+        document.getElementById("popup").style.display = "flex";
+
+        confetti({
+            particleCount: 200,
+            spread: 90,
+            origin: { y: 0.6 }
+        });
+
+        clickCount = 0; // Сброс кликов после подарка
+    } else {
+        const messages = [
+            "📜 \"Терпение — это искусство надеяться.\" — Вовенарг (или тот, кто любил котиков)", 
+            "📜 \"Стучите — и откроют. Но лучше тихонько копайте под фундамент.\" — Народная премудрость", 
+            "📜 \"Не всегда ворота открываются с первого толчка. Иногда нужно спеть перед ними.\" — Поэты древности", 
+            "📜 \"Тот, кто идёт медленно, видит больше.\" — Слепой мудрец Востока", 
+            "📜 \"Любознательность губит кошек, но делает волшебников.\" — Старые хроники", 
+            "📜 \"Лёгкий путь не строит великих историй.\" — Неизвестный скиталец", 
+            "📜 \"Каждый удар в дверь записан в книге судеб.\" — Хроники забытых библиотек", 
+            "📜 \"Иногда судьба притворяется стеной, чтобы проверить, как сильно ты хочешь пройти.\" — Великий мистификатор", 
+            "📜 \"Смеются те, кто доходит.\" — Путник с потертым плащом", 
+            "📜 \"Настоящие сокровища спрятаны на одиннадцатом шаге.\" — Легенды забытого клана"
+        ];
+
+        const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+        document.getElementById("popup-title").innerText = "🧩 Тайная мудрость";
+        document.getElementById("popup-text").innerText = randomMessage;
+        document.getElementById("popup").style.display = "flex";
+    }
+}
+
+</script>
+
 </head>
 
-<body>
+<	body>
 
 <div class="header-section">
     <h1>✨ New Year's Celebration with Neiruha ✨</h1>
@@ -197,7 +229,7 @@
 <div class="button-container">
     <a href="Locales/Ru/Chats/messages.html" class="button-link">📜 История эфира (Чат)</a>
     <a href="Locales/Ru/Presentation/index.html" class="button-link">🎥 10 открытий Фила (Презентация)</a>
-    <a href="#" class="button-link" onclick="showVideoInfo()">🎬 Видео-запись эфира</a>
+    <a href="#" class="button-link" onclick="handleVideoRequest()">🎬 Видео-запись эфира</a>
 </div>
 
 <div class="note">
