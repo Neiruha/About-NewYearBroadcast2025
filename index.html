@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Year 2025 — Live Broadcast and Discoveries</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffcccc, #ccffff);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            overflow-x: hidden;
+            padding: 30px 10px;
+        }
+        .header-section {
+            margin-bottom: 0px;
+        }
+        .header-section h1 {
+            color: #333;
+            margin-bottom: 0px;
+            font-size: 32px;
+        }
+        .subtext {
+            color: #555;
+            font-size: 16px;
+        }
+        .subtext a {
+            color: #ff6666;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .subtext a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            margin-top: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        a.button-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff6666;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            min-width: 200px;
+            text-align: center;
+        }
+        a.button-link:hover {
+            background-color: #ff3333;
+        }
+        .note {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #444;
+            max-width: 700px;
+            line-height: 1.6;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.5s;
+        }
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            animation: popIn 0.5s ease;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            max-width: 90%;
+        }
+        .popup-content h2 {
+            margin-bottom: 20px;
+            color: #ff6666;
+        }
+        .popup-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .popup-content button {
+            padding: 10px 20px;
+            background-color: #ff6666;
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup-content button:hover {
+            background-color: #ff3333;
+        }
+        @media (max-width: 600px) {
+            .button-container {
+                flex-direction: column;
+            }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+    <script>
+        const quotes = [
+            "Time flies like an arrow. Fruit flies like a banana!",
+            "404: Motivation not found. Try coffee?",
+            "Life is short. Smile while you still have teeth!",
+            "Loading English version... Please insert more patience!",
+            "Reality is just a crutch for people who can't handle New Year's parties!",
+            "Clicking faster doesn't make it ready sooner, but we respect the hustle!",
+            "Support@neiruha.com knows magic. Trust us.",
+            "If confetti could code, this page would be ready already!",
+            "Waiting builds character. Or at least excuses!",
+            "New Year, new you, but still no English page... yet!"
+        ];
+
+        function comingSoon() {
+            const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+            document.getElementById("popup-title").innerText = "🚀 Oops! Coming soon!";
+            document.getElementById("popup-text").innerText = randomQuote;
+            document.getElementById("popup").style.display = "flex";
+
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+
+        function showVideoInfo() {
+            document.getElementById("popup-title").innerText = "🎬 Видео-запись эфира";
+            document.getElementById("popup-text").innerHTML = "Запись эфира есть!<br>Чтобы получить её, напишите на <b>support@neiruha.com</b> 🎥";
+            document.getElementById("popup").style.display = "flex";
+
+            confetti({
+                particleCount: 120,
+                spread: 60,
+                origin: { y: 0.7 }
+            });
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="header-section">
+    <h1>✨ New Year's Celebration with Neiruha ✨</h1>
+    <p class="subtext">December 26, 2024 &nbsp;|&nbsp; Questions? <a href="mailto:support@neiruha.com">support@neiruha.com</a></p>
+</div>
+
+<h2>🌎 English Version (Coming Soon)</h2>
+<div class="button-container">
+    <a href="#" class="button-link" onclick="comingSoon()">📜 Chat History (Coming soon)</a>
+    <a href="#" class="button-link" onclick="comingSoon()">🎥 Phil's 10 Discoveries (Coming soon)</a>
+</div>
+
+<div class="note">
+    🔥 Chat — a live story of the pre-New Year’s broadcast.<br>
+    🌟 Presentation — a journey through 10 important discoveries Phil made in 2024, while working with AI during the most unusual year of his life.
+</div>
+
+<h2>🌎 Русская версия</h2>
+<div class="button-container">
+    <a href="Locales/Ru/Chats/messages.html" class="button-link">📜 История эфира (Чат)</a>
+    <a href="Locales/Ru/Presentation/index.html" class="button-link">🎥 10 открытий Фила (Презентация)</a>
+    <a href="#" class="button-link" onclick="showVideoInfo()">🎬 Видео-запись эфира</a>
+</div>
+
+<div class="note">
+    🔥 Чат — это история живого эфира перед Новым годом.<br>
+    🌟 Презентация — рассказ о 10 важных открытиях, которые Фил сделал за 2024 год, работая с AI в самый странный для себя год.<br>
+    🎬 Видео — запись эфира можно получить, написав на <b>support@neiruha.com</b>.
+</div>
+
+<!-- Попап -->
+<div id="popup" class="popup" onclick="closePopup()">
+    <div class="popup-content" onclick="event.stopPropagation()">
+        <h2 id="popup-title">🚀 Oops! Coming soon!</h2>
+        <p id="popup-text">If you want it faster, write to <b>support@neiruha.com</b> 😉</p>
+        <button onclick="closePopup()">Got it!</button>
+    </div>
+</div>
+
+</body>
+</html>
